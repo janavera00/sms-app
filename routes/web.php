@@ -56,7 +56,7 @@ Route::get('/section', function () {
 });
 
 Route::get('/signup', function () {
-    return view('functions.signup');  
+    return view('layout.signup');  
 });
 Route::get('/nav', function () {
     return view('components._navbar');  
