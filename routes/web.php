@@ -53,10 +53,16 @@ Route::get('/section', function () {
     return view('functions.section');
 });
 Route::get('/signup', function () {
-    return view('layout.signup');  
+    return view('functions.signup');  
 });
 Route::get('/nav', function () {
     return view('components._navbar');  
 });
 
 Route::resource('/account', AccountController::class);
+
+
+
+Route:: get('/new',function(){
+return view ('new.home');
+});
