@@ -4,13 +4,13 @@
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background: #0d1b28;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="color: rgb(255,255,255);">Bula Central School</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav me-auto"></ul><span class="navbar-text actions"> <a class="login" href="login.html" style="color: rgb(255,255,255);margin-right: 16px;">Log In</a><a class="btn btn-light action-button" role="button" href="signup.html" style="background: var(--bs-blue);color: rgba(255,255,255,0.9);">Sign Up</a></span>
+                <ul class="navbar-nav me-auto"></ul><span class="navbar-text actions"> <a class="login" href="login" style="color: rgb(255,255,255);margin-right: 16px;">Log In</a><a class="btn btn-light action-button" role="button" href="signup" style="background: var(--bs-blue);color: rgba(255,255,255,0.9);">Sign Up</a></span>
             </div>
         </div>
     </nav>
     <div class="text-center about-me" style="margin-top: 139px;">
         <div class="d-lg-flex justify-content-lg-center intro-lead-in"><span style="color: rgb(0,0,0);font-size: 40px;font-weight: bold;">Back To School!</span></div>
-        <div class="d-lg-flex justify-content-lg-center intro-heading text-uppercase" style="margin-bottom: 15px;"><span style="color: rgb(0,0,0);">It's Nice To Meet You</span></div><a class="btn btn-outline-primary" role="button" href="registration_form.html" style="color: rgb(255,255,255);background: #0d1b28;width: 373px;height: 50px;text-align: center;font-size: 25px;" data-bs-target="#modal-1" data-bs-toggle="modal">Register Now!</a>
+        <div class="d-lg-flex justify-content-lg-center intro-heading text-uppercase" style="margin-bottom: 15px;"><span style="color: rgb(0,0,0);">It's Nice To Meet You</span></div><a class="btn btn-outline-primary" role="button" href="registration_form" style="color: rgb(255,255,255);background: #0d1b28;width: 373px;height: 50px;text-align: center;font-size: 25px;" data-bs-target="#modal-1" data-bs-toggle="modal">Register Now!</a>
         <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
             <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -249,7 +249,7 @@
                                                                             <div class="modal-body">
                                                                                 <p>Are you sure you want to cancel your registration</p>
                                                                             </div>
-                                                                            <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">No</button><a class="btn btn-primary" role="button" href="index.html">Yes</a></div>
+                                                                            <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">No</button><a class="btn btn-primary" role="button" href="index">Yes</a></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
