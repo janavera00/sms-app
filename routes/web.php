@@ -60,3 +60,9 @@ Route::get('/nav', function () {
 });
 
 Route::resource('/account', AccountController::class);
+
+
+
+Route:: get('/new',function(){
+return view ('new.home');
+});

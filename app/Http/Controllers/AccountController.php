@@ -27,14 +27,8 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        count($input); 
-       
-       return view ('old.count')->with('input', $input);
-        // foreach($input as $register){
-        //     echo count $register;
-        // }
-        // Account::create($input);
-        // return redirect('account')->with('flash_message', 'Account Added!'); 
+        Account::create($input);
+        return redirect('account')->with('flash_message', 'Account Added!'); 
     }
 
     // Pag show ning sarong item lang sa database (Pa saro -saro) pero dae pa updated

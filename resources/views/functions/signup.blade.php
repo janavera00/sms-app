@@ -1,5 +1,6 @@
 @extends('layout.app')
 @section('content')
+
 <body class="bg-gradient-primary" style="background: #0d1b28;">
     <div class="container" style="width: 979px;">
         <div class="card shadow-lg o-hidden border-0 my-5">

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('birthdate');
             $table->string('schoolYear');
             $table->string('contactNo');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('position');
             $table->string('educattain');
             $table->foreignId('accounts_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
