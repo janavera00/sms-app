@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Account;
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\each;
+
 class AccountController extends Controller
 {
   
@@ -25,8 +27,14 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        Account::create($input);
-        return redirect('account')->with('flash_message', 'Account Added!'); 
+        count($input); 
+       
+       return view ('old.count')->with('input', $input);
+        // foreach($input as $register){
+        //     echo count $register;
+        // }
+        // Account::create($input);
+        // return redirect('account')->with('flash_message', 'Account Added!'); 
     }
 
     // Pag show ning sarong item lang sa database (Pa saro -saro) pero dae pa updated

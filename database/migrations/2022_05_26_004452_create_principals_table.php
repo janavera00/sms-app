@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('position');
             $table->string('educattain');
-            $table->foreignId('accounts_id')->constrained();
+            $table->foreignId('accounts_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
