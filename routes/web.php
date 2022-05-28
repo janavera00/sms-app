@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\AccountController;
 use App\Models\Account;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,19 +43,15 @@ Route::get('/profile', function () {
 Route::get('/registration', function () {
     return view('functions.registration_form');
 });     
-
 Route::get('/section_add', function () {
     return view('functions.section_add');
 });
-
 Route::get('/section_list', function () {
     return view('functions.section_list');
 });
-
 Route::get('/section', function () {
     return view('functions.section');
 });
-
 Route::get('/signup', function () {
     return view('layout.signup');  
 });
@@ -62,41 +59,4 @@ Route::get('/nav', function () {
     return view('components._navbar');  
 });
 
-//  Example of getting all data from table of database
-
-// Route::get('/account',function(){
-//      return view('practice.view',[
-//          'account' => Account::all()
-//       ]);
-//  });
-
-//    Example of getting single data from table of database
-//  Route::get('/account/{account}',function(account $account){
-//     if($account){
-//         return view('practice.view',[
-//             'account' =>  $account
-//         ]);
-//     }else{
-//         abort('404');
-//     }
-//     }
-// );
-
 Route::resource('/account', AccountController::class);
-
-
-
-
-
-/* Route::get('/Listing/{id}',function($id){
-  $Listing = Listing::find($id);
-    if($listing){
-        return view('listing',[
-         'listing' =>  $listing
-    }
-    else{
-        abort('404')
-    }
-     ]);
- });
-*/

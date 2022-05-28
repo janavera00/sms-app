@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('principals', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('fname');
             $table->string('mname')->nullable();
             $table->string('lname');
@@ -25,12 +25,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('position');
             $table->string('educattain');
-            $table->integer('AccountID');
+            $table->foreignId('accounts_id')->constrained();
             $table->timestamps();
-
-            // Connecting to Foreign Key from 1 table to Another (NOT YET SURE)
-            //  $table->foreign('AccountID')->references('AccountID')
-            //  ->on('Accounts')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

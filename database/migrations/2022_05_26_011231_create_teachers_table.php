@@ -14,31 +14,23 @@ return new class extends Migration
     public function up()
     {
         Schema::create('teachers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('fname');
             $table->string('mname')->nullable();
             $table->string('lname');
             $table->string('gender');
-            $table->string('birthdate');
+            $table->string('birthdate')->nullable();
             $table->string('schoolYear')->nullable();
-            $table->string('contactNo');
+            $table->string('contactNo')->nullable();
             $table->string('email');
             $table->string('position');
             $table->string('educattain')->nullable();
-            $table->integer('AccountID');
+            $table->foreignId('accounts_id')->constrained()->onDelete('cascade')->onUpdate('cascade');;
             $table->timestamps();
-
-             // Connecting to Foreign Key from 1 table to Another (NOT YET SURE)
-            $table->foreign('AccountID')->references('AccountID')
-                 ->on('Accounts')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+   
     public function down()
     {
         Schema::dropIfExists('teachers');
