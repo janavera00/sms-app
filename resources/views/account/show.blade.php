@@ -13,6 +13,7 @@
         <p class="card-text">Mobile : {{ $accounts->password }}</p>
         <p class="card-text">Address : {{ $accounts->role }}</p>
         <p class="card-text">Mobile : {{ $accounts->store}}</p>
+        {{-- jasdjasdhkjashdaskj --}}
 
   </div>
        
