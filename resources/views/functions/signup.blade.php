@@ -11,25 +11,25 @@
                             <div class="text-center">
                                 <h4 class="text-dark mb-4">Create an Account!</h4>
                             </div>
-                            <form class="user">
+                            <form class="user" action="{{ url('account') }}">
                                 <div class="row mb-3">
                                     <div class="col-sm-6 mb-3 mb-sm-0"><select class="form-select" style="padding: 16px;height: 52px;font-size: 13.8px;border-radius: 150px;" required="">
-                                            <optgroup label="">
+                                            <optgroup label="Type" name = 'type' >
                                                 <option value="Principal">Principal</option>
                                                 <option value="teacher">Teacher</option>
                                             </optgroup>
                                         </select></div>
-                                    <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="examplePasswordInput-2" placeholder="Position" name="position" required=""></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="examplePasswordInput-2" placeholder="Position" name="position" required=""></div>
                                 </div>
                                 <div class="row mb-3">
-                                    <div class="col-xxl-4 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput-5" placeholder="FIrst Name" name="firstName" required=""></div>
-                                    <div class="col-sm-6 col-xxl-4"><input class="form-control form-control-user" type="password" id="examplePasswordInput-3" placeholder="Middle Name" name="middleName"></div>
-                                    <div class="col-sm-6 col-xxl-4"><input class="form-control form-control-user" type="password" id="examplePasswordInput-4" placeholder="Last Name" name="lastName" required=""></div>
+                                    <div class="col-xxl-4 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="examplePasswordInput-5" placeholder="First Name" name="fname" required=""></div>
+                                    <div class="col-sm-6 col-xxl-4"><input class="form-control form-control-user" type="text" id="examplePasswordInput-3" placeholder="Middle Name" name="mname"></div>
+                                    <div class="col-sm-6 col-xxl-4"><input class="form-control form-control-user" type="text" id="examplePasswordInput-4" placeholder="Last Name" name="lname" required=""></div>
                                 </div>
                                 <div class="mb-3"></div>
                                 <div class="row mb-3">
                                     <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email Address" name="email" required=""></div>
-                                    <div class="col-sm-6"><input class="form-control form-control-user" type="email" id="exampleInputEmail-1" aria-describedby="emailHelp" placeholder="Contact Number" name="contactNo" required="" pattern="[0-9]" minlength="11"></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="number" id="exampleInputEmail-1" aria-describedby="emailHelp" placeholder="Contact Number" name="contactNo" required="" pattern="[0-9]" minlength="11"></div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-6 mb-3 mb-sm-0"><select class="form-select" style="padding: 16px;height: 52px;font-size: 13.8px;border-radius: 150px;" required="">
@@ -43,7 +43,8 @@
                                 <div class="row mb-3">
                                     <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput-1" placeholder="Password" name="password" required=""></div>
                                     <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput-1" placeholder="Repeat Password" name="password_repeat" required=""></div>
-                                </div><a class="btn btn-primary d-block btn-user w-100" role="button" style="background: #0d1b28;width: 500px;" href="index">Register Account</a>
+                                </div>
+                                <input type="submit" value="Register Account" class="btn btn-primary d-block btn-user w-100" style="background: #0d1b28;width: 500px;"></br>
                                 <hr>
                             </form>
                             <div class="text-center"><a class="small" href="forgot-password">Forgot Password?</a></div>

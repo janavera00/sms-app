@@ -19,24 +19,23 @@ return new class extends Migration
             $table->string('mname')->nullable();
             $table->string('lname');
             $table->string('gender');
-            $table->string('birthdate');
-            $table->string('schoolYear');
-            $table->string('contactNo');
+            $table->string('birthdate')->nullable();
+            $table->string('schoolYear')->nullable();
+            $table->string('contactNo')->nullable();
             $table->string('email');
             $table->string('position');
-            $table->string('educattain');
+            $table->string('educattain')->nullable();
             $table->foreignId('accounts_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('principals');
     }
+
+
 };
