@@ -8,6 +8,7 @@ use App\Models\Teacher;
 use App\Models\Principal;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Symfony\Component\Console\Input\Input;
 
 class HomeController extends Controller
 {
@@ -43,7 +44,23 @@ class HomeController extends Controller
     }
 
     public function account_login (){
-        
+        $account = Account::all();
+        $input =  request()->all();
+        //  dd($input);
+        foreach ($account as $db){
+            if ($db['email'] == $input['email']
+            && $db['password'] == $input['pass']
+            && $db ['status'] == 'Active'){
+                $id = $db['id'];
+                $user =  Account::find($id);
+                Alert::success('Success', 'Success');
+                dd(redirect('/dashboard')->with('user',$user));
+            }else{
+                Alert::Error('Error', ' Email and Password does not match ! ');
+                return back();
+            }
+        }
+
     }
 
 }

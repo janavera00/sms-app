@@ -7,13 +7,13 @@
             </div>
             <div class="modal-body">
                 <div class="p-5" style="margin-top: -50px;margin-bottom: -50px;">
-                    <form class="user" action="{{url ('login/create')  }}" >
+                    <form class="user" action="{{url ('/login')  }}" >
                         <div class="mb-3">
                             <div class="row">
                                 <div class="col"><label class="form-label">Login
                                     as</label><select class="form-select"
                                     style="padding: 16px;height: 52px;font-size: 13.8px;border-radius: 150px;" name="type">
-                                    <option value="Principal">Principal</option>
+                                    <option value="principal">Principal</option>
                                     <option value="teacher">Teacher</option>
                                 </select></div>
                             </div>
@@ -23,7 +23,7 @@
                                 placeholder="Enter Email Address..." name="email" required=""></div>
                         <div class="mb-3"><input class="form-control form-control-user"
                                 type="password" id="exampleInputPassword" placeholder="Password"
-                                name="password" required=""></div>
+                                name="pass" required=""></div>
                         <div class="mb-3">
                             <div class="custom-control custom-checkbox small">
                                 <div class="form-check"><input

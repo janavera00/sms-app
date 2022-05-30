@@ -21,5 +21,10 @@ Route::get('/', function(){
     return view('home.home');
 });
 
+Route::get('/dashboard',function(){
+    return view ('home.dashboard');
+});
+
 //Home button and functionalities
 Route::get('/signup',[HomeController::class, 'account_register']);
+Route::get('/login',[HomeController::class, 'account_login']);
