@@ -22,7 +22,7 @@ Route::get('/', function(){
 });
 
 Route::get('/dashboard',function(){
-    return view ('home.dashboard');
+    return view ('principal.dashboard');
 });
 
 //Home button and functionalities

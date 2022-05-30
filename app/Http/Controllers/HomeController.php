@@ -46,17 +46,20 @@ class HomeController extends Controller
     public function account_login (){
         $account = Account::all();
         $input =  request()->all();
-        //  dd($input);
+
         foreach ($account as $db){
             if ($db['email'] == $input['email']
             && $db['password'] == $input['pass']
-            && $db ['status'] == 'Active'){
-                $id = $db['id'];
-                $user =  Account::find($id);
-                Alert::success('Success', 'Success');
-                dd(redirect('/dashboard')->with('user',$user));
+            && $db ['status'] == 'Active'
+            && $db ['type'] == $input ['type']){
+               
+                $num = $db['id'];
+               $person =  User::find($num);
+               dd($person);
+               return redirect ('/dashboard')->with('person', $person);
+                Alert::success('success', 'Login Successfully!');  
             }else{
-                Alert::Error('Error', ' Email and Password does not match ! ');
+                 Alert::Error('Error', ' Email and Password does not match ! ');
                 return back();
             }
         }
