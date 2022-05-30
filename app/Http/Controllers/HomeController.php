@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Http\Requests\LoginRequest;
 use App\Models\Account;
 use App\Models\Teacher;
 use App\Models\Principal;
+use App\Models\User;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Symfony\Component\Console\Input\Input;
@@ -43,26 +44,39 @@ class HomeController extends Controller
         }
     }
 
-    public function account_login (){
-        $account = Account::all();
-        $input =  request()->all();
+    public function account_login (LoginRequest $request){
 
-        foreach ($account as $db){
-            if ($db['email'] == $input['email']
-            && $db['password'] == $input['pass']
-            && $db ['status'] == 'Active'
-            && $db ['type'] == $input ['type']){
-               
-                $num = $db['id'];
-               $person =  User::find($num);
-               dd($person);
-               return redirect ('/dashboard')->with('person', $person);
-                Alert::success('success', 'Login Successfully!');  
-            }else{
-                 Alert::Error('Error', ' Email and Password does not match ! ');
-                return back();
-            }
+        $account = Account::
+        where('email', $request->email)
+            ->where('password',$request->password)
+            ->where('type',$request->type)
+            ->where('status','Active');
+
+        if($account->count() > 0)
+        {
+            return redirect('/dashboard')
+            ->withSuccess('Successfully Log in!'); 
+
+        }else{
+            return back()->with('error', 'BOBO KA NILINGAWAN MO PASSWORD MO!');
         }
+
+        // foreach ($account as $db){
+        //     if ($db['email'] == $request->email
+        //     && $db['password'] == $request->password
+        //     && $db ['status'] == 'Active'
+        //     && $db ['type'] == $request->type){
+        
+        //         $num = $db['id'];
+        //         $user = User::find($num);
+        //        return redirect ('/dashboard');
+        //        ->with('user',$user);
+        //         Alert::success('success', 'Login Successfully!');  
+        //     }else{
+        //          Alert::Error('Error', ' Email and Password does not match ! ');
+        //         return back();
+        //     }
+        // }
 
     }
 

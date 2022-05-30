@@ -27,4 +27,4 @@ Route::get('/dashboard',function(){
 
 //Home button and functionalities
 Route::get('/signup',[HomeController::class, 'account_register']);
-Route::get('/login',[HomeController::class, 'account_login']);
+Route::post('/login',[HomeController::class, 'account_login'])->name('login');

@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css?h=ef9efa29ed5490562c2ff272112d2e97">
     <link rel="stylesheet" href="/assets/css/listgridview.css">
     <link rel="stylesheet" href="/assets/css/styles.min.css?h=470f3c1ffdb13785176364e4c38d1fb9">
-    <link rel="stylesheet" href="https:/nk rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https:/nk" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     
 </head>
@@ -33,6 +34,7 @@
 @include('sweetalert::alert')
 @if (Session::has('error'))
     <script>
+    alert('{{Session::get('error')}}')
         Swal.fire(
             'An Error occured!',
             '{{Session::get('error')}}',
@@ -51,6 +53,4 @@
 @endif
 {{session::forget('success')}}
 {{session::forget('error')}}
-
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 </html>
