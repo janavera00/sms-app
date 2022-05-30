@@ -1,6 +1,7 @@
 @extends('layout.app')
 @section('content')
 <body class="bg-gradient-primary" style="background: #0d1b28;">
+    @include('sweetalert::alert');
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-7 col-xl-10">

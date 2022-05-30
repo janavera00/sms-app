@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Account;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use function GuzzleHttp\Promise\each;
 
@@ -26,9 +27,14 @@ class GuideController extends Controller
    // Pag save sa database function after nang create functionality
     public function store(Request $request)
     {
-        $input = $request->all();
-        Account::create($input);
-        return redirect('account')->with('flash_message', 'Account Added!'); 
+        $request = $request->all();
+        $user = Account::create($request);
+
+        if($user){
+            Alert::success('Sucess', 'You\ve Successfully Registered');
+            return back(); 
+        }
+
     }
 
     // Pag show ning sarong item lang sa database (Pa saro -saro) pero dae pa updated
