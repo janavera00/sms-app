@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
             $table->string('role')->nullable();
             $table->enum('status',['Pending', 'Active', 'Deactivated']);

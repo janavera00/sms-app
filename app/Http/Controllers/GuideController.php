@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use function GuzzleHttp\Promise\each;
 
-class AccountController extends Controller
+class GuideController extends Controller
 {
   
     // para ma retrive yung data

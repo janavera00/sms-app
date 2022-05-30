@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('teachers', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('fname');
             $table->string('mname')->nullable();
@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('birthdate')->nullable();
             $table->string('schoolYear')->nullable();
             $table->string('contactNo')->nullable();
-            $table->string('email');
             $table->string('position');
             $table->string('educattain')->nullable();
             $table->foreignId('accounts_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
@@ -30,9 +29,13 @@ return new class extends Migration
         });
     }
 
-   
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('teachers');
+        Schema::dropIfExists('users');
     }
 };
