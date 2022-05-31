@@ -27,17 +27,17 @@ class HomeController extends Controller
             $account['status'] = 'Pending';
             $account->save();
 
-             $user ['fname'] = $request['fname'];
-             $user ['lname'] = $request ['lname'];
-             $user ['mname'] = $request ['mname'];
-             $user ['gender'] = $request ['gender'];
-             $user ['birthdate'] = $request ['birthdate'];
-             $user ['position'] = $request ['position'];
-             $user ['contactNo'] = $request ['contactNo'];
-             $user ['accounts_id'] = $account['id'];
-             $user->save();
-             Alert::success('Success', 'Account Successfully Registered');
-             return back();
+            $user ['fname'] = $request['fname'];
+            $user ['lname'] = $request ['lname'];
+            $user ['mname'] = $request ['mname'];
+            $user ['gender'] = $request ['gender'];
+            $user ['birthdate'] = $request ['birthdate'];
+            $user ['position'] = $request ['position'];
+            $user ['contactNo'] = $request ['contactNo'];
+            $user ['accounts_id'] = $account['id'];
+            $user->save();
+            Alert::success('Success', 'Account Successfully Registered');
+            return back();
         }else{
             Alert::error('error', 'Registered Failed');
             return back() ;
