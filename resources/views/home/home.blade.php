@@ -21,7 +21,7 @@
                     style="color: rgb(0,0,0);font-size: 40px;font-weight: bold;">Back To School!</span></div>
             <div class="d-lg-flex justify-content-lg-center intro-heading text-uppercase" style="margin-bottom: 15px;"><span
                     style="color: rgb(0,0,0);">It's Nice To Meet You</span></div><a class="btn btn-outline-primary"
-                role="button" href="registration_form"
+                role="button" href="/pre-register"
                 style="color: rgb(255,255,255);background: #0d1b28;width: 373px;height: 50px;text-align: center;font-size: 25px;">Register
                 Now!</a>
         </div>

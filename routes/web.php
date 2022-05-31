@@ -18,13 +18,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+// Home page route
 Route::get('/', function(){
     return view('home.home');
-});
-
-Route::get('/dashboard',function(){
-    $accounts = Account::all();
-    return view ('principal.dashboard')->with('accounts', $accounts);
 });
 
 //Home button and functionalities

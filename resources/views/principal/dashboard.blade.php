@@ -8,8 +8,9 @@
                     <div class="sidebar-brand-text mx-3"><span style="font-family: Nunito, sans-serif;"></span><img src="assets/img/logo.png" style="width: 82px;margin-top: 17px;"></div>
                 </a>
                 <hr class="sidebar-divider my-0">
+                {{-- Navbar inputs --}}
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="brigada.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url('dashboard')}}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="section.html"><i class="fa fa-sticky-note"></i><span>Section</span></a></li>
                     <li class="nav-item"><a class="nav-link"><i class="fa fa-bookmark"></i><span>Brigada</span></a></li>
@@ -42,7 +43,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                         aria-expanded="false" data-bs-toggle="dropdown" href="#"><span
-                                            class="d-none d-lg-inline me-2 text-gray-600 small"> {{ $acc->id }}</span><img class="border rounded-circle img-profile"
+                                            class="d-none d-lg-inline me-2 text-gray-600 small"> Kenneth Regonay</span><img class="border rounded-circle img-profile"
                                             src="/assets/img/avatars/avatar1.jpeg?h=0ecc82101fb9a10ca459432faa8c0656"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
                                             class="dropdown-item" href="/profile"><i

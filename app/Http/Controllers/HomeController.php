@@ -58,9 +58,8 @@ class HomeController extends Controller
          && $credentials ['password'] == $account['password']
         && $account['status'] == 'Active'){
              Alert::success('success', 'Login Successfully!'); 
-             $acc = Account::find($account['id']);
-             dd ($acc);             
-             return view ('principal.dashboard')->with('acc', $acc);
+             $acc = Account::find($account['id']);         
+             return redirect ('/dashboard')->with('acc', $acc);
         }else{  
             Alert::error('Error', 'Account Not Found!');
             return back();
@@ -68,37 +67,5 @@ class HomeController extends Controller
         }
             
         }
-        // $account = Account::
-        // where('email', $request->email)
-        //     ->where('password',$request->password)
-        //     ->where('type',$request->type)
-        //     ->where('status','Active');
-
-        // if($account->count() > 0)
-        // {
-        //     return redirect('/dashboard')
-        //     ->withSuccess('Successfully Log in!'); 
-
-        // }else{
-        //     return back()->with('error', 'BOBO KA NILINGAWAN MO PASSWORD MO!');
-        // }
-
-        // foreach ($account as $db){
-        //     if ($db['email'] == $request->email
-        //     && $db['password'] == $request->password
-        //     && $db ['status'] == 'Active'
-        //     && $db ['type'] == $request->type){
-        
-        //         $num = $db['id'];
-        //         $user = User::find($num);
-        //        return redirect ('/dashboard');
-        //        ->with('user',$user);
-        //         Alert::success('success', 'Login Successfully!');  
-        //     }else{
-        //          Alert::Error('Error', ' Email and Password does not match ! ');
-        //         return back();
-        //     }
-        // }
-
     }
 
