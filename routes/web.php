@@ -4,6 +4,7 @@ use App\Models\Account;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -22,9 +23,13 @@ Route::get('/', function(){
 });
 
 Route::get('/dashboard',function(){
-    return view ('principal.dashboard');
+    $accounts = Account::all();
+    return view ('principal.dashboard')->with('accounts', $accounts);
 });
 
 //Home button and functionalities
 Route::get('/signup',[HomeController::class, 'account_register']);
 Route::post('/login',[HomeController::class, 'account_login'])->name('login');
+
+//Dashboard Functionalities
+Route::resource('/dashboard', [DashboardController::class]);

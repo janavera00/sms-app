@@ -44,22 +44,44 @@ class HomeController extends Controller
         }
     }
 
-    public function account_login (LoginRequest $request){
-
-        $account = Account::
-        where('email', $request->email)
-            ->where('password',$request->password)
-            ->where('type',$request->type)
-            ->where('status','Active');
-
-        if($account->count() > 0)
-        {
-            return redirect('/dashboard')
-            ->withSuccess('Successfully Log in!'); 
-
-        }else{
-            return back()->with('error', 'BOBO KA NILINGAWAN MO PASSWORD MO!');
+    public function account_login (Request $request){
+    
+        $credentials = $request->validate([
+        'type' => ['required', 'max:9'],
+        'email' => ['required', 'email'],
+        'password' => ['required', 'max:50']
+        ]);
+        $accounts = Account::all();
+        foreach($accounts as $account){
+         if($credentials['type'] == $account['type']
+         && $credentials ['email'] == $account['email']
+         && $credentials ['password'] == $account['password']
+        && $account['status'] == 'Active'){
+             Alert::success('success', 'Login Successfully!'); 
+             $acc = Account::find($account['id']);
+             dd ($acc);             
+             return view ('principal.dashboard')->with('acc', $acc);
+        }else{  
+            Alert::error('Error', 'Account Not Found!');
+            return back();
         }
+        }
+            
+        }
+        // $account = Account::
+        // where('email', $request->email)
+        //     ->where('password',$request->password)
+        //     ->where('type',$request->type)
+        //     ->where('status','Active');
+
+        // if($account->count() > 0)
+        // {
+        //     return redirect('/dashboard')
+        //     ->withSuccess('Successfully Log in!'); 
+
+        // }else{
+        //     return back()->with('error', 'BOBO KA NILINGAWAN MO PASSWORD MO!');
+        // }
 
         // foreach ($account as $db){
         //     if ($db['email'] == $request->email
@@ -80,4 +102,3 @@ class HomeController extends Controller
 
     }
 
-}
