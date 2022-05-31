@@ -32,4 +32,4 @@ Route::get('/signup',[HomeController::class, 'account_register']);
 Route::post('/login',[HomeController::class, 'account_login'])->name('login');
 
 //Dashboard Functionalities
-Route::resource('/dashboard', [DashboardController::class]);
+Route::resource('/dashboard', DashboardController::class);
